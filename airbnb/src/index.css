@@ -1,0 +1,37 @@
+@import "tailwindcss";
+/* {property}-{name} — replace property with text/bg/border*/
+
+@theme {
+    --color-primary: #126E73; 
+    --color-accent: #F0A23E;
+    --color-heading: #14201E;  /* title text */
+    --color-body: #73706A; /* secondary text */
+    --color-border: #E3E0D6; /* hairlines */
+    --color-surface: #FBFAF6; /* background */
+    --color-warmer-surface: #F6F4EC; 
+
+    /* ------------------------------ state colors (with background) ------------------------------ */
+    --color-info: #1F507F;
+    --color-info-fill: #E7F0F8; 
+    --color-success: #1E5A3A;
+    --color-success-fill: #E6F1EA; 
+    --color-warning: #8A5210; 
+    --color-warning-fill: #FBEFDD; 
+    --color-error: #962E26;
+    --color-error-fill: #FAE9E7; 
+    
+    /* ------------------------------ button colors ------------------------------ */
+    --color-primary-hover: #0E575B;
+    --color-primary-active: #0B4448;
+    --color-disabled: #6E8E8F; 
+    --color-disabled-fill: #B7D2D3; /* background */
+
+    /* ------------------------------ font  ------------------------------ */
+    --font-heading: "Rubik", sans-serif;
+    --font-body: "Inter", sans-serif; 
+}
+@layer base {
+  body { font-family: var(--font-body); color: var(--color-body); }
+  h1, h2, h3 { font-family: var(--font-heading); letter-spacing: -0.02em; font-weight: 500; line-height: 1;}
+  body { line-height: 1; }
+}
