@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "flowbite";
+
 /* {property}-{name} — replace property with text/bg/border*/
 
 @theme {

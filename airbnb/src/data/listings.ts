@@ -72,16 +72,17 @@ const listings = [
         thumbnail: "/listings/charming_two_room_studio_apartment.jpg"
     },
     {
-        name: "'The Dorm', in Historic Home",
-        id: "the_dorm_in_historic_home",
+        name: "Northeast Oasis",
+        id: "northeast_oasis",
         location: "Minneapolis, Minnesota",
-        property: "Apartment",
+        property: "Home",
         type: ["City"],
-        price_per_night: 124.39,
+        price_per_night: 167.98,
         favorite: true,
-        guests: 2,
-        stars: 4.96,
-        thumbnail: "/listings/the_dorm_in_historic_home.jpg"
+        guests: 5,
+        stars: 4.93,
+        thumbnail: "/listings/northeast_oasis.jpg"
     },
 ]
 export default listings;
+

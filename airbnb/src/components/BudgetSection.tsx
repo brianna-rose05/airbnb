@@ -12,8 +12,6 @@ export function BudgetFilter () {
         return item.price_per_night <= budget && item.guests >= guests;
     });
 
-
-
     return ( 
         <div>
             <div className="flex flex-col gap-3">
@@ -23,11 +21,12 @@ export function BudgetFilter () {
                     type="range" min="0" max="900"
                     value={budget} 
                     onChange={(e) => setBudget(Number(e.target.value))}
-                    className="flex-2 w-full h-2 bg-border rounded-full accent-primary appearance-none cursor-pointer"
+                    className="flex-2 w-full h-2 bg-border rounded-full accent-primary cursor-pointer"
                     />
                     <p className="text-primary font-semibold">${budget} / night</p>
                 </div>
                 <div className='flex flex-row gap-2 items-center'>
+                    <p>Number of guests</p>
                     {[1,2,3,4].map((n) => (
                         <button key={n} onClick={() => setGuests(n)}
                         className={`flex items-center rounded-full border px-5 py-2 cursor-pointer ${guests === n ? `

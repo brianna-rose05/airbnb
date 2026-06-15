@@ -1,92 +1,51 @@
-import logo from '../assets/logo.png'
 import hero1 from '../assets/hero1.png'
 import collection_img_1 from '../assets/cabin.png'
-import { UserRound, Menu, Dot, Search, Parasol, TentTree, Building2, Tractor, MountainSnow, PawPrint, SlidersHorizontal, Map, ArrowRight } from 'lucide-react';
+import { Dot, Parasol, TentTree, Building2, Tractor, MountainSnow, PawPrint, SlidersHorizontal, Map, ArrowRight } from 'lucide-react';
+import { useNavigate } from "react-router";
 
 import listings from '../data/listings';
 import { MapCard } from '../components/Cards';
-import {BudgetFilter} from '../components/BudgetSection'
+import {BudgetFilter} from '../components/BudgetSection';
+import {Carousel} from '../components/HeroSection';
+import {Heading} from '../components/Heading';
+
+
+
 
 
 
 
 function HomePage() {
+const navigate = useNavigate();
   return (
     <div className="bg-surface">
-      <div className="w-full h-[65svh] relative">
-        <div className="absolute top-0 left-0 w-full flex flex-row justify-between items-center z-10 p-5 text-white">
-        <img src={logo} alt="Airbnb" className="h-8" />
-         <ul className="flex-row flex gap-5">
-             <li>Homes</li>
-            <li>Experiences</li>
-            <li>Services</li>
-        </ul>
-        <div className="flex-row flex gap-5 items-center">
-            <p>Become a host</p>
-            <div className="bg-white border border-border flex flex-row h-11 p-5 items-center rounded-full gap-3">
-                <Menu className="h-auto w-5 text-black"/>
-                <div className="bg-primary rounded-full p-1" >
-                    <UserRound className="h-auto w-5 text-white"/>
-                </div>
-            </div>
-        </div>
-      </div>
-        <img src={hero1} alt="Lake Superior" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="flex flex-col absolute top-1/2 left-10 text-white">
-            <div className="flex flex-row h-auto items-center">
-                <p className='text-lg'>Featured</p>
-                <Dot className= "text-white" />
-                <p className='text-xl'>Duluth, Minnesota</p>
-            </div>
-            <h1 className='text-5xl'>Wake up on Lake Superior</h1>
-            <div className="w-full border-border border bg-white mt-3 flex flex-row items-center rounded-full py-2 px-2">
-                <div className="w-full h-auto flex flex-col border-r border-border px-8">
-                    <p className="text-black text-xs font-medium">Where</p>
-                    <div>
-                        <input className= "text-body placeholder:text-body placeholder:text-sm" type="search" placeholder="Search destinations"></input>
-                    </div>
-                </div>
-                <div className="w-full h-auto flex flex-col border-r border-border px-6">
-                    <p className="text-black text-xs font-medium">When</p>
-                    <div>
-                        <input className= "text-body placeholder:text-body placeholder:text-sm" type="search" placeholder="Add dates"></input> 
-                    </div>
-                </div>
-                <div className="w-full h-auto flex flex-col px-6">
-                    <p className="text-black text-xs font-medium">Who</p>
-                    <div>
-                        <input className= "text-body placeholder:text-body placeholder:text-sm" type="search" placeholder="Add guests"></input> 
-                    </div>
-                </div>
-                <div className="bg-primary p-3.5 rounded-full">
-                    <Search className='text-white text-base'></Search>
-                </div>
-            </div>
-        </div>
+        <div className="relative w-full h-[65svh] overflow-hidden">
+        <Heading />
+        < Carousel />
         </div>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-row gap-10 py-10 justify-items-center border-b border-border text-body">
-            <button className="flex flex-col gap-2 items-center">
+           <button onClick={() => navigate("/search?category=Lakeside")} className="flex flex-col gap-2 items-center cursor-pointer">
                 <Parasol className="w-8 h-auto"></Parasol>
                 <p className="text-sm">Lakeside</p>
             </button>
-            <button className="flex flex-col gap-2 items-center">
+            <button onClick={() => navigate("/search?category=Cabin")} className="flex flex-col gap-2 items-center cursor-pointer">
                 <TentTree className="w-8 h-auto"></TentTree>
                 <p className="text-sm">Cabin</p>
             </button>
-            <button className="flex flex-col gap-2 items-center">
+            <button onClick={() => navigate("/search?category=City")} className="flex flex-col gap-2 items-center cursor-pointer">
                 <Building2 className="w-8 h-auto"></Building2>
                 <p className="text-sm">City</p>
             </button>
-            <button className="flex flex-col gap-2 items-center">
+            <button onClick={() => navigate("/search?category=Countryside")} className="flex flex-col gap-2 items-center cursor-pointer">
                 <Tractor className="w-8 h-auto"></Tractor>
                 <p className="text-sm">Countryside</p>
             </button>
-             <button className="flex flex-col gap-2 items-center">
+            <button onClick={() => navigate("/search?category=Views")} className="flex flex-col gap-2 items-center cursor-pointer">
                 <MountainSnow className="w-8 h-auto"></MountainSnow>
                 <p className="text-sm">Views</p>
             </button>
-            <button className="flex flex-col gap-2 items-center">
+            <button onClick={() => navigate("/search?category=Pet-friendly")} className="flex flex-col gap-2 items-center cursor-pointer">
                 <PawPrint className="w-8 h-auto"></PawPrint>
                 <p className="text-sm">Pet-friendly</p>
             </button>
@@ -160,7 +119,7 @@ function HomePage() {
       </div>
         <div className="bg-warmer-surface py-10 border-y border-border">
             <div className="max-w-7xl mx-auto px-6 flex flex-col gap-6">
-                <div className="flex flex-col gap-1 pb-5">
+                <div className="flex flex-col gap-1 pb-8">
                     <h3 className="text-3xl text-heading">Stays for your budget</h3>
                     <p>Set your price and group size — listings update instantly.</p>
                 </div>
