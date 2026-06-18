@@ -81,4 +81,45 @@ export function GuestFavorite({ favorite }: {favorite: boolean}) {
     );  
 }
 
+export function HorizontalCard({card}: {card:Listing}) {
+    const price = Math.round(card.price_per_night);
+    return (
+        <>
+            <div className="grid grid-cols-3 h-75 overflow-hidden rounded-3xl bg-white border border-border">
+                <div className="col-span-1 relative">
+                    <img src={card.thumbnail} className="w-full object-cover h-full min-h-0"></img>
+                    <button>
+                        <Heart className="absolute right-4 top-4 text-white"></Heart>
+                    </button>
+                    <div className="absolute left-4 top-4 flex items-center p-4 h-4 rounded-full bg-accent text-black text-sm">
+                        <p>Top match</p>
+                    </div>
+                </div>
+                <div className="flex flex-col col-span-2 w-full py-10 px-15">
+                    <h2 className="text-3xl text-heading">{card.name}</h2>
+                    <p className="text-lg">{card.location}</p>
+                    <div className="flex flex-row gap-2 py-4">
+                        <div className="left-4 top-4 flex items-center p-4 h-4 rounded-full bg-primary/15 text-primary text-sm">
+                            <p>Lakeside</p>
+                        </div>
+                        <div className="left-4 top-4 flex items-center p-4 h-4 rounded-full bg-primary/15 text-primary text-sm">
+                            <p>Cabin</p>
+                        </div>
+                    </div>
+                    <div className="mt-auto t-5 flex w-full flex-row items-center justify-between pt-2">
+                        <div className="flex items-center">
+                            <p>Up to {card.guests} guests</p>
+                            <Dot></Dot>
+                            <div className="flex flex-row text-black items-center gap-2">
+                            <Star className="h-4 w-4 text-yellow-400"></Star>
+                            <p>{card.stars}</p>
+                            </div>
+                        </div>
+                        <p><span className="text-2xl text-heading font-bold">${price}</span> /night</p>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
 

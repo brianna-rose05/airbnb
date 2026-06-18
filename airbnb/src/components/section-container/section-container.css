@@ -1,0 +1,14 @@
+@reference "../../index.css";
+
+
+.section-container {
+    @apply flex flex-col py-10 gap-10;
+}
+
+.section-container-top {
+    @apply flex flex-col gap-2;
+}
+
+.section-title {
+    @apply text-3xl text-heading;
+}       

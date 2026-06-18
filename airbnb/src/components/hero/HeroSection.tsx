@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {  Dot } from 'lucide-react';
-import listings from '../data/listings';
-import {SearchBar} from './SearchBar'
+import listings from '../../data/listings';
+import {SearchBar} from '../SearchBar'
 
 
 export function Carousel() {

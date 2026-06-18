@@ -1,0 +1,11 @@
+
+.rdp-root {
+    --rdp-accent-background-color: #F3F4F6;
+    --rdp-accent-color: #126E73;
+    --rdp-today-color: #126E73;
+    --rdp-range_middle-color: #73706A;
+    color: #73706A;
+    --rdp-outside-opacity: 0.5; 
+    --rdp-disabled-opacity: 0.2;
+    
+}

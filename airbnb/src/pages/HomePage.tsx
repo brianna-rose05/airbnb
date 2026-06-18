@@ -1,15 +1,15 @@
 import hero1 from '../assets/hero1.png'
 import collection_img_1 from '../assets/cabin.png'
-import { Dot, Parasol, TentTree, Building2, Tractor, MountainSnow, PawPrint, SlidersHorizontal, Map, ArrowRight } from 'lucide-react';
+import {  SlidersHorizontal, Map, ArrowRight } from 'lucide-react';
 import { useNavigate } from "react-router";
 
 import listings from '../data/listings';
 import { MapCard } from '../components/Cards';
 import {BudgetFilter} from '../components/BudgetSection';
-import {Carousel} from '../components/HeroSection';
+import {Carousel} from '../components/hero/HeroSection';
 import {Heading} from '../components/Heading';
-
-
+import {Footer} from '../components/Footer';
+import { FilteredList } from '../components/filter/FilteredList';
 
 
 
@@ -19,37 +19,12 @@ function HomePage() {
 const navigate = useNavigate();
   return (
     <div className="bg-surface">
-        <div className="relative w-full h-[65svh] overflow-hidden">
+        <div className="relative w-full h-[65svh]">
         <Heading />
         < Carousel />
         </div>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-row gap-10 py-10 justify-items-center border-b border-border text-body">
-           <button onClick={() => navigate("/search?category=Lakeside")} className="flex flex-col gap-2 items-center cursor-pointer">
-                <Parasol className="w-8 h-auto"></Parasol>
-                <p className="text-sm">Lakeside</p>
-            </button>
-            <button onClick={() => navigate("/search?category=Cabin")} className="flex flex-col gap-2 items-center cursor-pointer">
-                <TentTree className="w-8 h-auto"></TentTree>
-                <p className="text-sm">Cabin</p>
-            </button>
-            <button onClick={() => navigate("/search?category=City")} className="flex flex-col gap-2 items-center cursor-pointer">
-                <Building2 className="w-8 h-auto"></Building2>
-                <p className="text-sm">City</p>
-            </button>
-            <button onClick={() => navigate("/search?category=Countryside")} className="flex flex-col gap-2 items-center cursor-pointer">
-                <Tractor className="w-8 h-auto"></Tractor>
-                <p className="text-sm">Countryside</p>
-            </button>
-            <button onClick={() => navigate("/search?category=Views")} className="flex flex-col gap-2 items-center cursor-pointer">
-                <MountainSnow className="w-8 h-auto"></MountainSnow>
-                <p className="text-sm">Views</p>
-            </button>
-            <button onClick={() => navigate("/search?category=Pet-friendly")} className="flex flex-col gap-2 items-center cursor-pointer">
-                <PawPrint className="w-8 h-auto"></PawPrint>
-                <p className="text-sm">Pet-friendly</p>
-            </button>
-        </div>
+        <FilteredList />
         <div className="flex flex-row gap-10 py-10 justify-between">
             <div className="flex flex-col gap-1">
                 <h3 className="text-3xl text-heading">Stays near Lake Superior</h3>
@@ -142,37 +117,7 @@ const navigate = useNavigate();
                 </div>
             </div>
         </div>
-        <div className="bg-warmer-surface border-y border-border">
-            <div className="mx-auto px-20 py-20 grid-cols-3 inline-grid gap-25">
-                <div className="flex flex-col gap-5 items-start self-start">
-                    <h3 className="text-heading pb-2">Support</h3>
-                    <button>Help center</button>
-                    <button>Cancellation options</button>
-                    <button>Safety information</button>
-                </div>
-                <div className="flex flex-col gap-5 items-start">
-                    <h3 className="text-heading pb-3">Hosting</h3>
-                    <button>Airbnb your home</button>
-                    <button>Hosting resources</button>
-                    <button>Community forum</button>
-                </div>
-                <div className="flex flex-col gap-5 items-start">
-                    <h3 className="text-heading pb-3">Airbnb</h3>
-                    <button>Newsroom</button>
-                    <button>New features</button>
-                    <button>Careers</button>
-                </div>
-            </div>
-            <div className="px-15">
-                <div className="flex flex-row items-center text-sm border-t border-border py-10 pb-20">
-                    <p>© 2026 Airbnb, Inc.</p>
-                    <Dot></Dot>
-                    <p>Privacy</p>
-                    <Dot></Dot>
-                    <p>Terms</p>
-                </div>
-            </div>
-        </div>
+        <Footer />
     </div>
   )
 }

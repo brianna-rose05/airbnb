@@ -1,12 +1,17 @@
 import logo from '../assets/logo.png'
 import { UserRound, Menu } from 'lucide-react';
+import { useNavigate } from "react-router";
+
 
 
 
 export function Heading() {
+    const navigate = useNavigate();
     return (
         <div className="absolute top-0 left-0 w-full flex flex-row justify-between items-center z-10 p-5 text-white">
-        <img src={logo} alt="Airbnb" className="h-8" />
+        <button onClick={() => navigate("/")}>
+            <img src={logo} alt="Airbnb" className="h-8 cursor-pointer" />
+        </button>
          <ul className="flex-row flex gap-5">
              <li>Homes</li>
             <li>Experiences</li>
