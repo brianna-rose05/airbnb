@@ -18,10 +18,16 @@ import {FilteredList} from '../components/filter/FilteredList';
 export function SearchResults() {
     const [searchParams] = useSearchParams();
     const category = searchParams.get("category");
+    const filter = searchParams.get("filter");
+
+    const result = filter ? listings.filter((listing) => listing.location.includes(filter)) : listings;
     const filtered = category ? listings.filter((listing) => listing.type.includes(category)) : listings;
     const results = filtered.length;
     
+    const filteredListings = listings.filter((listing) => {
+    const matchesCategory = category ? listing.type.includes(category) : true;
     
+
 
     return (
         <div>
@@ -38,17 +44,17 @@ export function SearchResults() {
                 <FilteredList />
                 <div className="section-container">
                     <div className="section-container-top">
-                        <h3 className="text-3xl text-heading">{category} stays</h3>
+                        <h3 className="text-3xl text-heading">{category} Stays</h3>
                         <p>{results} places based on your location</p>
                     </div>
-                    <HorizontalCard  card={filtered[0]} />
+                    <HorizontalCard  card={result[0]} />
                 </div>
                 <div className="section-container">
                     <div className="section-container-top">
                         <h3 className="text-2xl text-heading">All {category} stays</h3>
                     </div>
                     <div className="grid grid-cols-3 gap-6">
-                        {filtered.map((item) => (
+                        {result.map((item) => (
                             <ListingCard card={item} key={item.id}/>
                         ))}
                     </div>
