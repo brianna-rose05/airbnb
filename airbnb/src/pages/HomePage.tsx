@@ -1,14 +1,11 @@
 import hero1 from '../assets/hero1.png'
 import collection_img_1 from '../assets/cabin.png'
 import {  SlidersHorizontal, Map, ArrowRight } from 'lucide-react';
-import { useNavigate } from "react-router";
 
 import listings from '../data/listings';
 import { MapCard } from '../components/Cards';
 import {BudgetFilter} from '../components/BudgetSection';
 import {Carousel} from '../components/hero/HeroSection';
-import {Heading} from '../components/Heading';
-import {Footer} from '../components/Footer';
 import { FilteredList } from '../components/filter/FilteredList';
 
 
@@ -16,11 +13,9 @@ import { FilteredList } from '../components/filter/FilteredList';
 
 
 function HomePage() {
-const navigate = useNavigate();
   return (
     <div className="bg-surface">
         <div className="relative w-full h-[65svh]">
-        <Heading />
         < Carousel />
         </div>
       <div className="max-w-7xl mx-auto px-6">
@@ -117,7 +112,6 @@ const navigate = useNavigate();
                 </div>
             </div>
         </div>
-        <Footer />
     </div>
   )
 }

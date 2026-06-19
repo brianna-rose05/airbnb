@@ -1,7 +1,6 @@
 import { useSearchParams } from "react-router";
 import listings from '../data/listings';
 import {Heading} from '../components/Heading';
-import {Footer} from '../components/Footer';
 import {SearchBar} from '../components/SearchBar';
 import hero from '../assets/northshore.jpg'
 import '../components/section-container/section-container.css'
@@ -23,11 +22,7 @@ export function SearchResults() {
     const result = filter ? listings.filter((listing) => listing.location.includes(filter)) : listings;
     const filtered = category ? listings.filter((listing) => listing.type.includes(category)) : listings;
     const results = filtered.length;
-    
-    const filteredListings = listings.filter((listing) => {
-    const matchesCategory = category ? listing.type.includes(category) : true;
-    
-
+        
 
     return (
         <div>
@@ -60,11 +55,10 @@ export function SearchResults() {
                     </div>
                 </div>
             </div>
-            <Footer />
             </div>
         </div>
     );
-}
+    }
 
 
 
